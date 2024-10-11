@@ -20,7 +20,7 @@ body {
 
 :root {
     /* //....... Color ........// */
-    --primary-color: #ff3c78;
+    --primary-color: rgb(197, 7, 7);
     --light-black: rgba(0, 0, 0, 0.89);
     --black: #000;
     --white: #fff;
@@ -66,6 +66,7 @@ body {
 }
 
 .navbar-container {
+    padding: 44px ;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -91,9 +92,12 @@ body {
 .navbar-container ul a {
     text-decoration: none;
     color: var(--black);
-    font-size: 18px;
+    font-size: 22px;
     position: relative;
+    margin-left: 20px;
 }
+
+
 
 .navbar-container ul a:after {
     content: "";
@@ -303,6 +307,12 @@ body {
     flex-wrap: wrap;
     margin-top: 65px;
 }
+#collection{
+    margin-top: 130px;
+}
+.seller{
+margin-top: 80px !important;
+}
 
 .content {
     width: 330px;
@@ -327,11 +337,13 @@ body {
 }
 
 .content img {
+    object-fit: contain;
+    border-radius: 18px;
+    padding: 56px;
     width: 100%;
     height: 300px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+ }
 .img-content {
     position: absolute;
     top: 70%;
@@ -351,11 +363,7 @@ body {
 }
 
 .img-content button {
-    border: none;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-radius: 10px;
-    padding: 10px;
+   font-size: 70px;
 }
 
 .img-content a {
@@ -366,7 +374,6 @@ body {
 }
 
 .img-content button:hover {
-    background: var(--white);
     color: var(--primary-color);
 }
 
@@ -561,10 +568,7 @@ body {
     align-items: center;
 }
 
-.best-seller .red {
-    color: var(--primary-color);
-    cursor: pointer;
-}
+
 
 .best-seller .blue {
     color: #8989ce;
@@ -609,12 +613,13 @@ body {
 .seller .best-p1 {
     width: 250px;
     height: 370px;
-    /* border: 2px solid black; */
+    margin-top: 80px;
 }
 
 .seller .best-p1 img {
     height: 250px;
     width: 250px;
+    object-fit: contain;
 }
 
 .seller .best-p1 .price {
@@ -633,23 +638,23 @@ body {
 }
 
 .seller a:hover {
-    color: #f05e8a;
+    color: rgb(203, 6, 6);
 }
 
 .best-seller .buy-now button,
 .best-seller .add-cart button {
-    padding: 10px 15px;
-    margin-top: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    text-transform: uppercase;
-    background-color: #f05e8a;
-    color: var(--white);
-    border: none;
-    border-radius: 15px;
-    font-weight: 500;
-    border: 1px solid #f05e8a;
-    transition: 0.5s;
+        padding: 12px 23px;
+        margin-top: 5px;
+        font-size: 15px;
+        cursor: pointer;
+        text-transform: uppercase;
+        background-color: rgb(203, 6, 6);
+        color: var(--white);
+        border: none;
+        font-weight: 500;
+        border: 1px solid rgb(203, 6, 6);
+        transition: 0.5s;
+    
 }
 
 .best-seller .buy-now button:hover,
@@ -660,7 +665,7 @@ body {
 
 .best-seller .buy-now button:hover a,
 .best-seller .add-cart button:hover a {
-    color: #f05e8a;
+    color: rgb(203, 6, 6);
 }
 
 
@@ -744,6 +749,7 @@ body {
 
 #news {
     margin-bottom: 250px;
+    margin-top: 170px;
 }
 
 .news-heading p {
@@ -843,7 +849,7 @@ body {
 .l-news1 .news1-conte .date-news1 a::after {
     content: "";
     position: absolute;
-    background: #ff3c78;
+    background: var(--primary-color);
     height: 3px;
     width: 100%;
     left: 0;
@@ -884,7 +890,7 @@ body {
 .l-news2 .news2-conte .date-news2 a::after {
     content: "";
     position: absolute;
-    background: #ff3c78;
+    background: var(--primary-color);
     height: 3px;
     width: 100%;
     left: 0;
@@ -925,7 +931,7 @@ body {
 .l-news3 .news3-conte .date-news3 a::after {
     content: "";
     position: absolute;
-    background: #ff3c78;
+    background: var(--primary-color);
     height: 3px;
     width: 100%;
     left: 0;
@@ -1224,6 +1230,9 @@ iframe {
         padding-top: 40px;
     }
 }
+
+
+
 
 @media(orientation: landscape) and (max-height: 500px) {
     .header {

@@ -52,7 +52,7 @@ export default function Footer(){
   </div>
   <div className="f-design">
     <div className="f-design-txt container">
-      <p>Design and Code by code.sanket</p>
+      <p>Design and Code by Sufiyan farooq</p>
     </div>
   </div>
 </footer>

@@ -7,7 +7,7 @@ export default function ProductCard({image,title,categories,price,id}){
 <>
 
 <NavLink to={`/products/${id}`} >
-  <div className="w-72 h-96 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-10">
+  <div className="w-72 h-96 bg-white  rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-10">
       <a href="#">
         <img
           src={image}

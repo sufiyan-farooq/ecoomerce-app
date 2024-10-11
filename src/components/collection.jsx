@@ -1,39 +1,64 @@
-import "../home.css"
+
+import axios from "axios";
+import "../home.css";
+import { useState, useEffect } from "react";
+import { FaEye } from "react-icons/fa";
 
 
-export default function Collection(){
-    return(
-        <section id="collection">
-  <div className="collections container">
-    <div className="content">
-      <img src="https://i.postimg.cc/Xqmwr12c/clothing.webp" alt="img" />
-      <div className="img-content">
-        <p>Clothing Collections</p>
-        <button>
-          <a href="#sellers">SHOP NOW</a>
-        </button>
-      </div>
-    </div>
-    <div className="content2">
-      <img src="https://i.postimg.cc/8CmBZH5N/shoes.webp" alt="img" />
-      <div className="img-content2">
-        <p>Shoes Spring</p>
-        <button>
-          <a href="#sellers">SHOP NOW</a>
-        </button>
-      </div>
-    </div>
-    <div className="content3">
-      <img src="https://i.postimg.cc/MHv7KJYp/access.webp" alt="img" />
-      <div className="img-content3">
-        <p>Accessories</p>
-        <button>
-          <a href="#sellers">SHOP NOW</a>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+export default function Collection() {
 
-    )
+  const [products, setProducts] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+
+  const fetchProducts = async () => {
+    try {
+      setLoading(true);
+      const data = await axios.get(`https://fakestoreapi.com/products`);
+      setProducts(data.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center mt-24">
+        <img src="https://loading.io/assets/mod/spinner/shopping/lg.gif" />
+      </div>
+    );
+  }
+
+  // Slice the array to show only the first 4 products
+  const slicedProducts = products.slice(5, 8);
+
+  return (
+<section id="collection">
+<h2 className="text-3xl font-bold text-center mt-5">Top Sales <span className="text-red-500 text-6xl font-extrabold ">.</span></h2>
+        <div className="collections container">
+                    {slicedProducts.map((product) => (
+              <div className="content">
+              <img src={product.image} alt="img" />
+              <div className="img-content">
+                <button >
+
+                <FaEye />
+                </button>
+              </div>
+              
+
+            </div>
+          ))}
+        </div>
+    </section>
+  );
 }
+
+
+
+

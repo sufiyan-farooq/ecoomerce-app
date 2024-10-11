@@ -3,12 +3,7 @@ export default function ProductViewCard({addToCart,image,title,price,description
 
 
      const [count, setCount] = useState(0);
-     const increment = () => setCount(count + 1);
-     const decrement = () => {
-        if (count > 0) {
-          setCount(count - 1);
-        }
-      };
+   
 
 
     return(
@@ -17,10 +12,11 @@ export default function ProductViewCard({addToCart,image,title,price,description
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
       <img
         alt="ecommerce"
-        className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+        className=" w-64 lg:h-auto h-64 object-cotain object-center rounded"
+        style={{width:'460px'}}
         src={image}
       />
-      <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+      <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-12 ml-12">
         <h2 className="text-sm title-font text-gray-500 tracking-widest">
           {categary}
         </h2>
@@ -99,21 +95,6 @@ export default function ProductViewCard({addToCart,image,title,price,description
 <div className=" flex flex-wrap justify-between">
 
 
-<div className="flex items-center justify-center space-x-4 mt-5">
-<button
-  onClick={decrement}
-  className=" bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition duration-300"
->
-  -
-</button>
-<span className="text-2xl font-semibold">{count}</span>
-<button
-  onClick={increment}
-  className=" bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition duration-300"
->
-  +
-</button>
-   </div> 
 
  <div className="mt-8"> 
  <button onClick={addToCart}  className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
