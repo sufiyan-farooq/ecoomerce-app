@@ -2,8 +2,8 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router"
 import ProductViewCard from "../components/productViewCard";
-import { CartContext } from "../context/cartcontext";
-
+// import { CartContext } from "../context/cartcontext";
+import { CartContext } from "../context/cartContext";
 export default function ProductView(){
 
 const {id} = useParams()
