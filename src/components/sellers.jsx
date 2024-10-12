@@ -1,10 +1,13 @@
 import axios from "axios";
 import "../home.css";
 import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../context/cartcontext";
 
 export default function Seller() {
   const [products, setProducts] = useState([]);
   const [isLoading, setLoading] = useState(false);
+  const {cartItems , addItemToCart , setCartItems } = useContext(CartContext)
+
 
   const fetchProducts = async () => {
     try {
@@ -61,8 +64,8 @@ export default function Seller() {
                   </div>
                 </div>
                 <div className="buy-now pt-4">
-                  <button>
-                    <a href="https://codepen.io/sanketbodke/full/mdprZOq">Buy Now</a>
+                  <button onClick={()=>addItemToCart(product)} type="button" >
+                    Buy Now
                   </button>
                 </div>
               </div>

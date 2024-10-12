@@ -3,7 +3,7 @@ import axios from "axios";
 import "../home.css";
 import { useState, useEffect } from "react";
 import { FaEye } from "react-icons/fa";
-
+import { NavLink } from "react-router-dom";
 
 export default function Collection() {
 
@@ -45,10 +45,11 @@ export default function Collection() {
               <div className="content">
               <img src={product.image} alt="img" />
               <div className="img-content">
-                <button >
+              <NavLink to={`/products/${product.id}`}>
+              <FaEye size={10} />
+            </NavLink>
 
-                <FaEye />
-                </button>
+              
               </div>
               
 
